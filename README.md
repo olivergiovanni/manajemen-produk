@@ -17,3 +17,11 @@ Untuk menjalankan projek gunakan perintah
 ```
 yarn dev
 ```
+
+Library dan Framework yang digunakan dalam projek ini
+- ReactJs
+- React Hook Form
+- React Router
+- Redux Toolkit
+- Antd
+- TailwindCSS

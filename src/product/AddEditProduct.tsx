@@ -18,8 +18,6 @@ const AddEditProduct = () => {
   const { pathname } = location
   const isEditPage = pathname.includes("/edit")
 
-  // type FormType = isAddPage ? AddProduct | EditProduct
-
   const dispatch = useDispatch()
   const { control, handleSubmit, reset } = useForm<IAddEditProduct>();
   const products: Product[] = useSelector((state: any)  => state.product.products)

@@ -1,4 +1,10 @@
-# React + TypeScript + Vite
+# Aplikasi Manajemen Produk
+
+Untuk melakukan git clone pada project ini gunakan perintah
+
+```
+git clone
+```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

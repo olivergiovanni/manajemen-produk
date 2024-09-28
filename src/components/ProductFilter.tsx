@@ -4,6 +4,7 @@ import { default as Form } from "antd/lib/form";
 import { default as Input } from "antd/lib/input";
 import { default as Select } from "antd/lib/select";
 import { default as Space } from "antd/lib/space";
+import orderBy from 'lodash/orderBy'
 import { Controller, useForm } from "react-hook-form"
 import { Link } from "react-router-dom";
 
@@ -31,11 +32,11 @@ const ProductFilter = (props: any) => {
   const sortByOptions = [
     {
       label: "Menaik",
-      value: "ascending"
+      value: "asc"
     },
     {
       label: "Menurun",
-      value: "descending"
+      value: "desc"
     }
   ]
 
@@ -44,11 +45,11 @@ const ProductFilter = (props: any) => {
     if (values.name) {
       newProducts = newProducts.filter((product: any) => product.name.includes(values.name))
     }
-    if (values.orderBy && values.sortBy == "ascending") {
-      newProducts = newProducts.sort((a: any,b: any) => a[`${values.orderBy}`]>b[`${values.orderBy}`])
+    if (values.orderBy && values.sortBy === "asc") {
+      newProducts = orderBy(newProducts, [values.orderBy], ['asc'])
     }
-    if (values.orderBy && values.sortBy == "descending") {
-      newProducts = newProducts.sort((a: any,b: any) => a[`${values.orderBy}`]<b[`${values.orderBy}`])
+    if (values.orderBy && values.sortBy === "desc") {
+      newProducts = orderBy(newProducts, [values.orderBy], ['desc'])
     }
     setFilteredProducts(newProducts)
   }

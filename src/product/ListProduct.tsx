@@ -1,20 +1,16 @@
-import { default as Button } from "antd/lib/button";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import ProductList from "../components/ProductList";
-import { PlusOutlined } from "@ant-design/icons";
+import ProductFilter from "../components/ProductFilter";
+import { useState } from "react";
 
 const ListProduct = () => {
   const products = useSelector((state: any)  => state.product.products)
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
   return (
     <div className="p-10">
-      <Link to="/product/add">
-        <Button icon={<PlusOutlined />}>
-          Tambah Produk
-        </Button>
-      </Link>
-      <ProductList products={products} />
+      <ProductFilter products={products} setFilteredProducts={setFilteredProducts} />
+      <ProductList products={filteredProducts} />
     </div>
   )
 }

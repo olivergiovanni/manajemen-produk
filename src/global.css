@@ -2,14 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  place-items: unset !important;
-}
-
 .ant-card-body {
   padding: 0px !important;
 }
 
-#root {
-  width: 100%;
+.ant-form-item {
+  margin-bottom: 10px;
 }
